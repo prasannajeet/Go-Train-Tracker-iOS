@@ -12,7 +12,7 @@ export const DepartureCard = ({item}: {item: any}) => {
   <View style={styles.details}>
     <DepartureTimeView time={item.Time} />
     <Text style={styles.platform}>
-      Platform: {item.Platform === '-' ? 'Not Assigned' : item.Platform}
+      Platform: {item.Platform === '-' ? 'N/A' : item.Platform}
     </Text>
   </View>
   <StopsView stops={item.Stops} />

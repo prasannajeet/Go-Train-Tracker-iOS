@@ -25,15 +25,35 @@ export const UnionStationDeparturesScreen = () => {
       {!loading && !error && departures && (
         departures.length > 0 ? (
           <View>
-            <Text style={styles.sectionHeader}>Departing Soon</Text>
-            <FlatList
-              data={departures.filter((item: any) => item.Platform !== '-')}
-              renderItem={({item}: any) => (
-                <DepartureCard item={item} />
-              )}
-              keyExtractor={(item: any) => item.TripNumber}
-              ItemSeparatorComponent={() => <View style={{height: 8}} />}
-            />
+            {departures.filter((item: any) => item.Platform !== '-').length > 0 ? (
+              <View>
+                <Text style={styles.sectionHeader}>Departing Soon</Text>
+                <FlatList
+                  data={departures.filter((item: any) => item.Platform !== '-')}
+                  renderItem={({item}: any) => (
+                    <DepartureCard item={item} />
+                  )}
+                  keyExtractor={(item: any) => item.TripNumber}
+                  ItemSeparatorComponent={() => <View style={{height: 8}} />}
+                />
+              </View>
+            ) : (
+              <Text style={styles.sectionHeader}>No available departures</Text>
+            )}
+
+            {departures.filter((item: any) => item.Info === 'Cancelled/Annulé').length > 0 && (
+              <View>
+                <Text style={[styles.sectionHeader, {marginTop: 16}]}>Cancelled!</Text>
+                <FlatList 
+                  data={departures.filter((item: any) => item.Info === 'Cancelled/Annulé')}
+                  renderItem={({item}: any) => (
+                    <DepartureCard item={item} />
+                  )}
+                  keyExtractor={(item: any) => item.TripNumber}
+                  ItemSeparatorComponent={() => <View style={{height: 8}} />}
+                />
+              </View>
+            )}
 
             <Text style={[styles.sectionHeader, {marginTop: 16}]}>Awaiting Departure Details</Text>
             <FlatList 
