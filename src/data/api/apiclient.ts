@@ -1,8 +1,8 @@
-import Config from 'react-native-config';
 import {GO_TRAIN_API_URL, TIMEOUT} from '../../constants/constants';
 import axios from 'axios';
+import {GO_TRAIN_API_KEY} from '@env';
 
-const goTrainApiKey = Config.GO_TRAIN_API_KEY;
+const goTrainApiKey = GO_TRAIN_API_KEY;
 if (!goTrainApiKey) {
   throw new Error('goTrainApiKey is not set');
 }
