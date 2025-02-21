@@ -7,7 +7,6 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -19,6 +18,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import {UnionStationDeparturesScreen} from './src/screens/unionstationdepartures/UnionStationDeps';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -27,7 +27,7 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaProvider>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
@@ -37,7 +37,7 @@ function App(): React.JSX.Element {
         style={backgroundStyle}>
         <UnionStationDeparturesScreen />
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

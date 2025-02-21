@@ -2,11 +2,12 @@ import {useUnionStationDeparturesViewModel} from './unionstationdepsviewmodel';
 import {View, Text, ActivityIndicator, StyleSheet, FlatList} from 'react-native';
 import { formatDate } from '../../utils/dateutilts';
 import { DepartureCard } from '../../components/DepartureCard';
+import { SafeAreaView } from 'react-native-safe-area-context';
 export const UnionStationDeparturesScreen = () => {
   const {departures, loading, error} = useUnionStationDeparturesViewModel();
   return (
     
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <Text style={styles.header}>Union Station Departures</Text>
         <Text style={styles.date}>{formatDate(new Date())}</Text>
       
@@ -69,7 +70,7 @@ export const UnionStationDeparturesScreen = () => {
           <Text style={styles.header}>No departures found</Text>
         )
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
