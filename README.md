@@ -1,40 +1,31 @@
-# GO Train Departures App
+# GO Train Tracker iOS
 
-A React Native mobile application that displays real-time GO Train departure information from Union Station in Toronto.
+A modern iOS application that displays real-time GO Train information, built with React Native and TypeScript. This is the iOS sister app of the GO Train Tracker Android application.
 
-## Features
+## Current Implementation
 
-- View all upcoming departures from Union Station
-- Real-time departure information including (Refresh feature coming soon):
-  - Train number and service
-  - Departure time
-  - Platform number
-  - Trip status/information
-  - Stops along the route
-- Organized sections for:
-  - Departing soon (trains with assigned platforms)
-  - Cancelled trains
-  - Upcoming departures awaiting details
-- Clean, modern UI with easy-to-read cards for each departure
+### Features Implemented
 
-- Upcoming screens
-  - Union Station Arrivals
-  - Select your desired station for departures and arrivals
-  - Notification for train departing from your station for a specific route and time/day
+* View all upcoming departures from Union Station
+* Real-time departure information including:
+  * Train number and service
+  * Departure time
+  * Platform number
+  * Trip status/information
+  * Stops along the route
+* Clean, modern UI with easy-to-read cards for each departure
 
-## Technical Details
+### Technical Implementation
 
-Built with:
+#### Architecture
 
-- React Native
-- TypeScript
-- Component-based architecture
-- Clean architecture principles
+The app follows clean architecture principles with a component-based architecture:
 
-### Key Components
-
-- `UnionStationDeparturesScreen`: Main screen displaying all departure information
-- `DepartureCard`: Reusable component showing individual train departure details
+* **Components**
+  * Reusable UI components like `DepartureCard`
+  * Screen components like `UnionStationDeparturesScreen`
+* **TypeScript** for type safety
+* **React Native** for cross-platform development
 
 ## Setup
 
